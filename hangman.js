@@ -3,7 +3,7 @@ var words = ["dothraki", "jon jnow", "nightwatch", "winterfell", "ned stark", "t
              "winter is coming", "westeros", "direwolf", "white walkers", "dorne", "lannister",
              "wildlings", "targaryen", "king's landing" ];
 
-var backgroundMusic = document.getElementById("backgroundMusic");
+
 
 var word = words[Math.random()*words.length];
 
@@ -18,4 +18,3 @@ while (remainingLetters > 0){
     // guesses remaining > 0
 }
 
-backgroundMusic.play();
