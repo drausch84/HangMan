@@ -2,12 +2,43 @@ body{
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOZZ08jU4YUM7Y9dSr-cRZxO2VtZh0BT_6Y-1eLVem1z4Oi2cr"); 
 }
 
-#header{
-    margin: -109px 110px;
+.header{
+    margin: 10px 250px;
     float:left;
+}
+.header img{
+    height:300px;
+    width: 900px;
 
 }
+
 #audioContainer {
     position: fixed;
     bottom: 0;
 }
+
+@media screen and (max-width: 980px) {
+    
+    body {
+  
+    }
+  
+    }
+    @media screen and (max-width: 980px) {
+    
+        .header{
+            position:static;
+          }
+        }
+      @media screen and (max-width: 768px) {
+          
+          .header{
+            position:static;
+          }
+        }
+      @media screen and (max-width: 768px) {
+        .header{
+            position:static;
+          }
+        }
+    
