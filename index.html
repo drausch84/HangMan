@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game of Thrones Hangman</title>
   
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
-  <script src = "hangman.js" type = "text/javascript"></script>
-  <script> window.onload = draw; </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+ <script src = "hangman.js" type = "text/javascript"></script>
+ <script>window.onload = draw;</script>
+ 
   
 </head>
 <body>
@@ -31,7 +35,14 @@
     <div class = "row">
       <!-- 1/3 column of 1st Row -->
       <div class = "col-lg-2">
-
+        <div class = "start-game-container">
+          <div id = "start-game" onclick = "start-game"><h2>Press Button to Get Started!</h2></div>
+          <h7>Wins</h7>
+          <h5 id="totalWins"></h5>
+          <h3 id="currentWord"></h3>
+          <h7>Guesses Remaining</h7>
+          <h6 id="remainingGuesses"></h6>
+        </div>
       </div>
       <!-- 2/3 column of 1st Row -->
       <div class = "col-lg-8">
@@ -39,22 +50,22 @@
       </div>
       <!-- 3/3 column of 1st Row -->
       <div class = "col-lg-2">
-
+     
       </div>
     </div>
     <!-- 2nd Row -->
     <div class = "row">
       <!-- 1/3 column in 2nd Row -->
-      <div class = "col-lg-5">
+      <div class = "col-lg-3">
 
       </div>
       <!-- 2/3 column in 2nd Row -->
-      <div class = "col-lg-4">
-
+      <div class = "col-lg-3">
+       
       </div>
       <!-- 3/3 column in 2nd Row -->
-      <div class = "col-lg-3">
-          <h4>Use Alphabet Below To Guess A Game Of Thrones Related Word</h4>
+      <div class = "col-lg-6">
+       
       </div>
     </div>
     <!-- 3rd Row -->
@@ -69,21 +80,7 @@
       </div>
       <!-- 3/3 column in 3rd Row -->
       <div class = "col-lg-6">
-        <section>
-            <button id = "A" type = "button" onclick = "aletter()">A</button>
-            <button id = "B" type = "button" onclick = "bletter()">B</button>
-            <button id = "C" type = "button" onclick = "cletter()">C</button>
-            <button id = "D" type = "button" onclick = "dletter()">D</button>
-            <button id = "E" type = "button" onclick = "eletter()">E</button>
-            <button id = "F" type = "button" onclick = "fletter()">F</button>
-            <button id = "G" type = "button" onclick = "gletter()">G</button>
-            <button id = "H" type = "button" onclick = "hletter()">H</button>
-            <button id = "I" type = "button" onclick = "iletter()">I</button>
-            <button id = "J" type = "button" onclick = "jletter()">J</button>
-            <button id = "K" type = "button" onclick = "kletter()">K</button>
-            <button id = "L" type = "button" onclick = "lletter()">L</button>
-            <button id = "M" type = "button" onclick = "mletter()">M</button>
-        </section>
+        
       </div>
     </div>
     <!-- 4th Row -->
@@ -98,24 +95,83 @@
       </div>
       <!-- 3/3 column in 4th Row -->
       <div class = "col-lg-6">
-        <section>
-            <button id = "N" type = "button" onclick = "nletter()">N</button>
-            <button id = "O" type = "button" onclick = "oletter()">O</button>
-            <button id = "P" type = "button" onclick = "pletter()">P</button>
-            <button id = "Q" type = "button" onclick = "qletter()">Q</button>
-            <button id = "R" type = "button" onclick = "rletter()">R</button>
-            <button id = "S" type = "button" onclick = "sletter()">S</button>
-            <button id = "T" type = "button" onclick = "tletter()">T</button>
-            <button id = "U" type = "button" onclick = "uletter()">U</button>
-            <button id = "V" type = "button" onclick = "vletter()">V</button>
-            <button id = "W" type = "button" onclick = "wletter()">W</button>
-            <button id = "X" type = "button" onclick = "xletter()">X</button>
-            <button id = "Y" type = "button" onclick = "yletter()">Y</button>
-            <button id = "Z" type = "button" onclick = "zletter()">Z</button>
-        </section>
+        
       </div>
     </div>
-      
+    <!-- 5th Row (empty)-->
+    <div class = "row">
+
+    </div>  
+    <!-- 6th Row -->
+    <div class = "row">
+      <!-- 1/3 column in 6th Row -->
+      <div class = "col-lg-3">
+
+      </div>
+      <!-- 2/3 column in 6th Row -->
+      <div class = "col-lg-6">
+        <canvas id = "hangman-area" width = "300px" height = "300px"></canvas>
+          </div>
+      </div>
+      <!-- 3/3 column in 6th Row -->
+      <div class = "col-lg-3">
+
+      </div>
+    </div>
+    <!-- 7th Row -->
+    <div class = "row">
+      <!-- 1/4 column in 7th Row -->
+      <div class = "col-lg-2">
+
+      </div>
+            <!-- 2/4 column in 7th Row -->
+            <div class = "col-lg-4">
+                <div id="guessContainer">
+                  <div class="guessingWordContainer"></div>
+                  <h4>Use Alphabet To Guess A Game Of Thrones Related Word</h4>
+                  <div class="tryLetters"></div>
+                </div>
+              </div>
+              <!-- 3/4 column in 7th Row -->
+              <div class = "col-lg-3">
+                <div id = "buttons">
+                  <button class = "alphabet" id = "A">A</button>
+                  <button class = "alphabet" id = "B">B</button>
+                  <button class = "alphabet" id = "C">C</button>
+                  <button class = "alphabet" id = "D">D</button>
+                  <button class = "alphabet" id = "E">E</button>
+                  <button class = "alphabet" id = "F">F</button>
+                  <button class = "alphabet" id = "G">G</button>
+                  <button class = "alphabet" id = "H">H</button>
+                  <button class = "alphabet" id = "I">I</button>
+                  <button class = "alphabet" id = "J">J</button>
+                  <button class = "alphabet" id = "K">K</button>
+                  <button class = "alphabet" id = "L">L</button>
+                  <button class = "alphabet" id = "M">M</button>
+                </div>
+                  <br>
+                <div id = "buttons">
+                  <button class = "alphabet" id = "N">N</button>
+                  <button class = "alphabet" id = "O">O</button>
+                  <button class = "alphabet" id = "P">P</button>
+                  <button class = "alphabet" id = "Q">Q</button>
+                  <button class = "alphabet" id = "R">R</button>
+                  <button class = "alphabet" id = "S">S</button>
+                  <button class = "alphabet" id = "T">T</button>
+                  <button class = "alphabet" id = "U">U</button>
+                  <button class = "alphabet" id = "V">V</button>
+                  <button class = "alphabet" id = "W">W</button>
+                  <button class = "alphabet" id = "X">X</button>
+                  <button class = "alphabet" id = "Y">Y</button>
+                  <button class = "alphabet" id = "Z">Z</button>
+                </div>
+              </div>
+        
+      <!-- 4/4 column in 7th Row -->
+      <div class = "col-lg-3">
+
+      </div>
+    </div>
     
   </div>  
   
