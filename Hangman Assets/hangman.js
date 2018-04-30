@@ -19,21 +19,25 @@ var winSound = new Audio('./Hangman Assets/got_s2e10_dracarys.wav');
 var loseSound = new Audio('./Hangman Assets/You Know Nothing Jon Snow Part 1.wav');
 var typingSound = new Audio('./Hangman Assets/typewriter-key-1.wav');
 
+//sound functions
+
+
+
+var word = words[Math.floor(Math.random()*(words.length))];
+
+for(var i = 0; i<word.length; i++){
+    
+}
 //change button color to show chosen letters
 $(document).ready(function() {
-    
-    for (var i = 0; i < letters.length; i++){
-        var letterBtn = $("<button>");  
-        letterBtn.addClass("letter-button letter letter-button-color"); 
-        letterBtn.attr("data-letter", letters[i]);  
-        letterBtn.text(letters[i]);  
-        $("#buttons").append(letterBtn);  
-    } 
+
+
+   
 function resetGame(){
     remainingGuesses  = maxGuesses;
 }
 
-var word = words[Math.floor(Math.random()*(words.length))];
+
 var s;
 
 function startGame(){
